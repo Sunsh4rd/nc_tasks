@@ -7,9 +7,9 @@ public class Counter {
 		counterPhrase = "Method Executed";
 	}
 	public static void doSomeStuff() {
-		System.out.println(Counter.counterPhrase);
+		System.out.println(counterPhrase);
 		countExecutions++;
-		System.out.println(Counter.countExecutions);
+		System.out.println(countExecutions);
 	}
 	public Counter(String phrase) {
 		this.counterPhrase = phrase;
