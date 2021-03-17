@@ -1,0 +1,20 @@
+1) Поставить идею
+2) Создать новый проект Command Line 
+3) Уметь складывать, вычитать, умножать и делить числа double. 
+4) Calculator имеет поле name
+5) Деление - 2 метода - один принимает int, один - double
+6) ArithmeticException
+	public double разделить(double a, double b)  
+
+	public int разделить(int a, int b) {
+		
+	}
+
+	int разделитьInternal(int a, int b) {
+		try {
+			return a/b;
+		} catch (ArithmeticExcepetin ex) {
+			sout(«a » + a +  ex.getMessage);
+			return Integer.Max_value;
+		}
+	}
