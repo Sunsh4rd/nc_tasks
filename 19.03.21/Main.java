@@ -11,14 +11,7 @@ public class Main {
 		for (int gr: a.getGrades()) {
 			System.out.println(gr);
 		}
-		
-		// Student b = new Student("Names", "And Letter", "Student", 7);
-		// Student c = new Student("Only", "Names", "Student");
-		// System.out.println(a.surname + ' ' + ' ' + a.name + ' ' + a.patronymic + ' ' + a.number + ' ' + a.letter);
-		// System.out.println(b.surname + ' ' + ' ' + b.name + ' ' + b.patronymic + ' ' + b.number + ' ' + b.letter);
-		// System.out.println(c.surname + ' ' + ' ' + c.name + ' ' + c.patronymic + ' ' + c.number + ' ' + c.letter);
 	}
-
 }
 
 class Student {
