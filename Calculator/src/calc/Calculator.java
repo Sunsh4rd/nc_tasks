@@ -2,7 +2,7 @@ package calc;
 
 public class Calculator {
 
-    private final String name;
+    private String name;
 
     public Calculator(String name) {
         this.name = name;
@@ -10,9 +10,5 @@ public class Calculator {
 
     public int add(int a, int b) {
         return a + b;
-    }
-
-    public String getName() {
-        return name;
     }
 }
