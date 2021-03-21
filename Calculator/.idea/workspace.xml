@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="246b372b-25cc-431f-9e8c-e7868b411c8a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/alkr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/alkr/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/calc/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calc/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
