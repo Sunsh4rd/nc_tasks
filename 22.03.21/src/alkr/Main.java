@@ -14,11 +14,13 @@ public class Main {
 
         Car c = new Car();
         Aircraft a = new Aircraft();
+        ElectroCar ec = new ElectroCar();
         c.move();
         c.refuel();
         a.move();
         a.refuel();
-
+        ec.move();
+        ec.refuel();
     }
 }
 
@@ -45,6 +47,19 @@ class Aircraft implements Movable {
     @Override
     public void refuel() {
         System.out.println("Refueling the tank with the help of the other aircraft...");
+    }
+}
+
+class ElectroCar extends Car {
+
+    @Override
+    public void move() {
+        super.move();
+    }
+
+    @Override
+    public void refuel() {
+        System.out.println("Recharging batteries...");
     }
 }
 
