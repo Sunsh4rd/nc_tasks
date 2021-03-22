@@ -12,11 +12,11 @@ public class Calculator {
         return a + b;
     }
 
-    public double sub(double a, double b) {
+    public double subtract(double a, double b) {
         return a - b;
     }
 
-    public double multi(double a, double b) {
+    public double multiply(double a, double b) {
         return a * b;
     }
 
