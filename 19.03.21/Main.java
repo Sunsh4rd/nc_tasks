@@ -7,6 +7,9 @@ public class Main {
 		Student a = new Student("Fully", "Initialized", "Student", 10, 'c', grades);
 		int[] g = a.getGrades();
 		g[0] = 5;
+		for (int gr: a.getGrades()) {
+			System.out.println(gr);
+		}
 		a.setGrades(g);
 		for (int gr: a.getGrades()) {
 			System.out.println(gr);
