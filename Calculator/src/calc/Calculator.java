@@ -33,7 +33,7 @@ public class Calculator {
             return a / b;
         }
         catch (ArithmeticException e) {
-            System.out.println("a = " + a + "b = " + b + " " + e.getMessage());
+            System.out.println("a = " + a + " " + "b = " + b + " " + e.getMessage());
             return Integer.MAX_VALUE;
         }
     }
