@@ -1,48 +1,93 @@
 package alkr;
 
+import inter.Movable;
+
 public class Main {
 
     public static void main(String[] args) {
-        Parent p = new Parent(3, 8);
-        Child c = new Child(11, 1);
+//        Parent p = new Parent(3, 8);
+//        Child c = new Child(11, 12);
+//        System.out.println(p.getFieldOne());
+//        System.out.println(p.getFieldTwo());
+//        System.out.println(c.getFieldOne());
+//        System.out.println(c.getFieldTwo());
 
-        System.out.println(p.getFieldOne());
-        System.out.println(p.getFieldTwo());
-        System.out.println(c.getFieldOne());
-        System.out.println(c.getFieldTwo());
+        Car c = new Car();
+        Aircraft a = new Aircraft();
+        c.move();
+        c.refuel();
+        a.move();
+        a.refuel();
+
     }
 }
 
-class Parent {
+class Car implements Movable {
 
-    private int fieldOne;
-    private int fieldTwo;
-
-    public Parent(int first, int second) {
-        this.fieldOne = first;
-        this.fieldTwo = second;
-    }
-
-    public int getFieldOne() {
-        return this.fieldOne;
-    }
-
-    public int getFieldTwo() {
-        return this.fieldTwo;
-    }
-}
-
-class Child extends Parent {
-
-    private int fieldOne;
-    private int fieldTwo;
-
-    public Child(int first, int second) {
-        super(first, second);
+    @Override
+    public void move() {
+        System.out.println("Car rides around...");
     }
 
     @Override
-    public int getFieldOne() {
-        return this.fieldOne;
+    public void refuel() {
+        System.out.println("Tank is empty, refueling...");
     }
 }
+
+class Aircraft implements Movable {
+
+    @Override
+    public void move() {
+        System.out.println("An aircraft takes off and flies away...");
+    }
+
+    @Override
+    public void refuel() {
+        System.out.println("Refueling the tank with the help of the other aircraft...");
+    }
+}
+
+//class Parent {
+//
+//    private int fieldOne;
+//    private int fieldTwo;
+//
+//    public Parent(int first, int second) {
+//        this.fieldOne = first;
+//        this.fieldTwo = second;
+//    }
+//
+//    public int getFieldOne() {
+//        return this.fieldOne;
+//    }
+//
+//    public int getFieldTwo() {
+//        return this.fieldTwo;
+//    }
+//}
+//
+//class Child extends Parent {
+//
+//    private int fieldOne;
+//    private int fieldTwo;
+//
+//    public Child(int first, int second) {
+//        super(first, second);
+//    }
+//
+//    @Override
+//    public int getFieldOne() {
+//        return this.fieldOne;
+//    }
+//}
+
+//class Earth {
+//
+//    private final String name;
+//
+//    public Earth(String name) {
+//        if (this == null)
+//        this.name = name;
+//    }
+//}
