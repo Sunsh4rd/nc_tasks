@@ -2,7 +2,9 @@ package car;
 
 public class CargoCar extends Car {
 
-    private static final int maxPossibleWeight = 10000;
+    static {
+        maxPossibleWeight = 10000;
+    }
     private final int maxWeight;
 
     public CargoCar(int maxWeight) {
