@@ -4,5 +4,5 @@ public abstract class Car {
 
     public static int maxPossibleWeight;
 
-    
+
 }
