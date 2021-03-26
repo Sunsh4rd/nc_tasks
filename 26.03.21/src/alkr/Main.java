@@ -10,6 +10,8 @@ public class Main {
         Basket<Fruit> basket = new Basket<>(fruits);
         basket.put(new Apple());
         basket.put(new Orange());
+        basket.put(new Orange());
+        basket.put(new Orange());
         Fruit[] items = basket.get();
         int c = items.length;
         System.out.println(c);
@@ -28,7 +30,7 @@ class Basket<T> {
     private int count;
 
     public Basket(T[] items) {
-        
+
         this.items = Arrays.copyOf(items, items.length);
         this.count = items.length;
     }
@@ -54,9 +56,7 @@ class Fruit {
 class Apple extends Fruit {
 
     @Override
-    public String toString() {
-        return "Apple";
-    }
+    public String toString() { return "Apple"; }
 
     @Override
     public int getSize() {
@@ -67,9 +67,7 @@ class Apple extends Fruit {
 class Orange extends Fruit {
 
     @Override
-    public String toString() {
-        return "Orange";
-    }
+    public String toString() { return "Orange"; }
 
     @Override
     public int getSize() {
