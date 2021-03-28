@@ -1,8 +1,7 @@
 package alkr;
 
 import car.*;
-
-import java.util.Arrays;
+import order.Order;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,12 +9,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Random random = new Random();
+//        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        System.out.println(s);
-        String[] s1 = s.split(" ");
-        System.out.println(Arrays.toString(s1));
+        String order = scanner.nextLine();
+        Order myOrder = new Order(order);
+        System.out.println(myOrder.toString());
 
 //        for (int i = 0; i < 10; i++) {
 //
