@@ -1,10 +1,12 @@
 package alkr;
 
+import java.io.Serializable;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        GenericClass gen = new GenericClass(1, "ABABAB", false);
+        GenericClass gen = new GenericClass(1, "ABABAB", 10.4);
         System.out.println(gen.gettTypeVariable());
         System.out.println(gen.getvTypeVariable());
         System.out.println(gen.getkTypeVariable());
@@ -13,7 +15,7 @@ public class Main {
     }
 }
 
-class GenericClass<T, V, K> {
+class GenericClass<T extends Comparable, V extends Serializable, K extends Number> {
 
     private T tTypeVariable;
     private V vTypeVariable;
