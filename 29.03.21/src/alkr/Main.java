@@ -1,19 +1,31 @@
 package alkr;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        GenericClass gen = new GenericClass(1, "ABABAB", 10.4);
-        System.out.println(gen.gettTypeVariable());
-        System.out.println(gen.getvTypeVariable());
-        System.out.println(gen.getkTypeVariable());
+        ArrayList<String> s = new ArrayList<>();
+        ArrayList<Integer> i = new ArrayList<>();
+        ArrayList<Cat> c = new ArrayList<>();
 
-        gen.names();
+        System.out.println(s.getClass());
+        System.out.println(i.getClass());
+
+        System.out.println(s.getClass().equals(c.getClass()));
+
+//        GenericClass gen = new GenericClass(1, "ABABAB", 10.4);
+//        System.out.println(gen.gettTypeVariable());
+//        System.out.println(gen.getvTypeVariable());
+//        System.out.println(gen.getkTypeVariable());
+//
+//        gen.names();
     }
 }
+
+class Cat { }
 
 class GenericClass<T extends Comparable, V extends Serializable, K extends Number> {
 
