@@ -13,6 +13,7 @@ public class Main {
 
         System.out.println(s.getClass());
         System.out.println(i.getClass());
+        System.out.println(c.getClass());
 
         System.out.println(s.getClass().equals(c.getClass()));
 
