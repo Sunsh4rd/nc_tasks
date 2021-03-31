@@ -24,7 +24,7 @@ public class Main {
     }
 
     private static void checkMarker(Marker marker) {
-        
+
         marker.printYourself();
     }
 }
