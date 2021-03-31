@@ -1,7 +1,7 @@
 package token;
 
 import art.FreeSoftArt;
-
+import except.KeyAlreadyExists;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -12,8 +12,9 @@ public class NftToken implements Token {
     private FreeSoftArt freeSoftArt;
     private UUID uniqueId;
 
-    private NftToken(FreeSoftArt freeSoftArt) {
+    public NftToken(FreeSoftArt freeSoftArt) {
         this.freeSoftArt = freeSoftArt;
+        this.uniqueId = UUID.randomUUID();
     }
 
     @Override
@@ -37,10 +38,21 @@ public class NftToken implements Token {
                 '}';
     }
 
+    public static NftToken of(FreeSoftArt freeSoftArt) throws KeyAlreadyExists {
+        return NftTokenRegistry.putAndReturn(freeSoftArt, new NftToken(freeSoftArt));
+    }
+
     private static class NftTokenRegistry {
 
         private static final Map<FreeSoftArt, NftToken> NFT_TOKEN_REGISTRY = new HashMap<>();
 
-        private static NftToken putAndReturn(FreeSoftArt freeSoftArt, NftToken nftToken);
+        private static NftToken putAndReturn(FreeSoftArt freeSoftArt, NftToken nftToken) throws KeyAlreadyExists {
+            if (NFT_TOKEN_REGISTRY.containsKey(freeSoftArt)) {
+                throw new KeyAlreadyExists("This key is already in registry");
+            } else {
+                NFT_TOKEN_REGISTRY.put(freeSoftArt, nftToken);
+            }
+            return NFT_TOKEN_REGISTRY.get(freeSoftArt);
+        }
     }
 }
