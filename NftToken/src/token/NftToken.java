@@ -22,12 +22,12 @@ public class NftToken implements Token {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NftToken nftToken = (NftToken) o;
-        return freeSoftArt.equals(nftToken.freeSoftArt);
+        return freeSoftArt.equals(nftToken.freeSoftArt) && uniqueId.equals(nftToken.uniqueId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(freeSoftArt);
+        return Objects.hash(freeSoftArt, uniqueId);
     }
 
     @Override
