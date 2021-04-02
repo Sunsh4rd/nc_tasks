@@ -13,7 +13,7 @@ public class Main {
 
         Supplier<String> kidSupplier = () -> "Drawing";
         Supplier<String> parentSupplier = () -> "Phone";
-        Consumer<String> kidConsumer = (s) -> shop.replaceAll(null);
+        Consumer<String> kidConsumer = (s) -> {while (shop.remove(s)) shop.remove(s);};
         Consumer<String> parentConsumer = (s) -> shop.remove(s);
 
         shop.add(kidSupplier.get());
@@ -30,7 +30,10 @@ public class Main {
         shop.add(kidSupplier.get());
         System.out.println(shop);
         parentConsumer.accept("Phone");
-        parentConsumer.accept("Drawing");
+        System.out.println(shop);
+        kidConsumer.accept("Phone");
+        System.out.println(shop);
+        kidConsumer.accept("Drawing");
         System.out.println(shop);
 //        ArrayList<Humanable> learners = new ArrayList<>();
 //
