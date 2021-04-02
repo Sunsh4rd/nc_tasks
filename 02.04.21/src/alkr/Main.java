@@ -13,7 +13,7 @@ public class Main {
 
         Supplier<String> kidSupplier = () -> String.valueOf(shop.add("Drawing"));
         Supplier<String> parentSupplier = () -> String.valueOf(shop.add("Phone"));
-        Consumer<String> kidConsumer = (s) -> {while (shop.remove(s)) shop.remove(s);};
+        Consumer<String> kidConsumer = (s) -> {while (shop.remove(s)) {}};
         Consumer<String> parentConsumer = (s) -> shop.remove(s);
 
         kidSupplier.get();
