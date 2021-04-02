@@ -30,6 +30,7 @@ public class Main {
         shop.add(kidSupplier.get());
         System.out.println(shop);
         parentConsumer.accept("Phone");
+        parentConsumer.accept("Drawing");
         System.out.println(shop);
 //        ArrayList<Humanable> learners = new ArrayList<>();
 //
