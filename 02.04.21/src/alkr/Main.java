@@ -11,23 +11,23 @@ public class Main {
 
         ArrayList<String> shop = new ArrayList<String>();
 
-        Supplier<String> kidSupplier = () -> "Drawing";
-        Supplier<String> parentSupplier = () -> "Phone";
+        Supplier<String> kidSupplier = () -> String.valueOf(shop.add("Drawing"));
+        Supplier<String> parentSupplier = () -> String.valueOf(shop.add("Phone"));
         Consumer<String> kidConsumer = (s) -> {while (shop.remove(s)) shop.remove(s);};
         Consumer<String> parentConsumer = (s) -> shop.remove(s);
 
-        shop.add(kidSupplier.get());
-        shop.add(parentSupplier.get());
-        shop.add(parentSupplier.get());
-        shop.add(kidSupplier.get());
-        shop.add(kidSupplier.get());
-        shop.add(parentSupplier.get());
-        shop.add(parentSupplier.get());
-        shop.add(kidSupplier.get());
-        shop.add(kidSupplier.get());
-        shop.add(parentSupplier.get());
-        shop.add(parentSupplier.get());
-        shop.add(kidSupplier.get());
+        kidSupplier.get();
+        parentSupplier.get();
+        kidSupplier.get();
+        parentSupplier.get();
+        kidSupplier.get();
+        parentSupplier.get();
+        kidSupplier.get();
+        parentSupplier.get();
+        kidSupplier.get();
+        parentSupplier.get();
+        kidSupplier.get();
+        parentSupplier.get();
         System.out.println(shop);
         parentConsumer.accept("Phone");
         System.out.println(shop);
