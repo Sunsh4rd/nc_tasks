@@ -31,6 +31,19 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.ow2.chameleon.database</groupId>
+            <artifactId>datasource-hsql</artifactId>
+            <version>0.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bitbucket.bradleysmithllc.etlunit</groupId>
+            <artifactId>hsqldb-database</artifactId>
+            <version>1.8.16</version>
+        </dependency>
+
     </dependencies>
 
     <build>
