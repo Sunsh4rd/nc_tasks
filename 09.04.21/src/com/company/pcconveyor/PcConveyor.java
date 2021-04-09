@@ -25,7 +25,7 @@ public class PcConveyor {
         System.out.println(queue);
 
         for (Pc pc: initialPcList) {
-            
+
         }
     }
 
