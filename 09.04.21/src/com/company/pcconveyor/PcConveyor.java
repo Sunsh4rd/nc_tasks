@@ -1,6 +1,7 @@
 package com.company.pcconveyor;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class PcConveyor {
@@ -9,12 +10,23 @@ public class PcConveyor {
 
     public static void run() {
 
-        ArrayDeque<Part> queue = new ArrayDeque<>();
         Random random = new Random();
+
+        ArrayList<Pc> initialPcList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            initialPcList.add(new Pc(random.nextInt(10)));
+        }
+        System.out.println(initialPcList);
+
+        ArrayDeque<Part> queue = new ArrayDeque<>();
         for (int i = 0; i < 5; i++) {
-            queue.addLast(createNewPart(parts[random.nextInt(4)], random.nextInt(1000)));
+            queue.addLast(createNewPart(parts[random.nextInt(4)], random.nextInt(10)));
         }
         System.out.println(queue);
+
+        for (Pc pc: initialPcList) {
+            
+        }
     }
 
     public static Part createNewPart(String partName, int id) {
@@ -33,6 +45,7 @@ public class PcConveyor {
 interface Part { }
 
 class Tower implements Part {
+
     int id;
 
     public Tower(int id) {
@@ -48,6 +61,7 @@ class Tower implements Part {
 }
 
 class MotherBoard implements Part {
+
     int id;
 
     public MotherBoard(int id) {
@@ -63,6 +77,7 @@ class MotherBoard implements Part {
 }
 
 class Hdd implements Part {
+
     int id;
 
     public Hdd(int id) {
@@ -78,6 +93,7 @@ class Hdd implements Part {
 }
 
 class Ram implements Part {
+
     int id;
 
     public Ram(int id) {
@@ -88,6 +104,40 @@ class Ram implements Part {
     public String toString() {
         return "Ram{" +
                 "id=" + id +
+                '}';
+    }
+}
+
+class Pc {
+
+    int id;
+    Part lastAddedPart;
+
+    public Pc(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Part getLastAddedPart() {
+        return lastAddedPart;
+    }
+
+    public void setLastAddedPart(Part lastAddedPart) {
+        this.lastAddedPart = lastAddedPart;
+    }
+
+    @Override
+    public String toString() {
+        return "Pc{" +
+                "id=" + id +
+                ", lastAddedPart=" + lastAddedPart +
                 '}';
     }
 }
