@@ -2,6 +2,7 @@ package com.company.pcconveyor;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
 public class PcConveyor {
@@ -19,34 +20,46 @@ public class PcConveyor {
         System.out.println(initialPcList);
 
         ArrayDeque<Part> queue = new ArrayDeque<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             queue.addLast(createNewPart(parts[random.nextInt(4)], random.nextInt(10)));
         }
         System.out.println(queue);
 
         for (Pc pc: initialPcList) {
-
+            for (Part part : queue) {
+                if (pc.getId() == part.getId()) {
+                    pc.setLastAddedPart(part);
+                    queue.poll();
+                }
+            }
         }
+
+        System.out.println(initialPcList);
+        System.out.println(queue);
     }
 
     public static Part createNewPart(String partName, int id) {
-        if (partName.equals("Tower")) {
-            return new Tower(id);
-        } else if (partName.equals("MotherBoard")) {
-            return new MotherBoard(id);
-        } else if (partName.equals("HDD")) {
-            return new Hdd(id);
-        } else {
-            return new Ram(id);
+        switch (partName) {
+            case "Tower":
+                return new Tower(id);
+            case "MotherBoard":
+                return new MotherBoard(id);
+            case "HDD":
+                return new Hdd(id);
+            default:
+                return new Ram(id);
         }
     }
 }
 
-interface Part { }
+interface Part {
+
+    public int getId();
+}
 
 class Tower implements Part {
 
-    int id;
+    private int id;
 
     public Tower(int id) {
         this.id = id;
@@ -58,11 +71,19 @@ class Tower implements Part {
                 "id=" + id +
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
 
 class MotherBoard implements Part {
 
-    int id;
+    private int id;
 
     public MotherBoard(int id) {
         this.id = id;
@@ -74,11 +95,20 @@ class MotherBoard implements Part {
                 "id=" + id +
                 '}';
     }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
 
 class Hdd implements Part {
 
-    int id;
+    private int id;
 
     public Hdd(int id) {
         this.id = id;
@@ -90,11 +120,20 @@ class Hdd implements Part {
                 "id=" + id +
                 '}';
     }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
 
 class Ram implements Part {
 
-    int id;
+    private int id;
 
     public Ram(int id) {
         this.id = id;
@@ -106,12 +145,21 @@ class Ram implements Part {
                 "id=" + id +
                 '}';
     }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
 
 class Pc {
 
-    int id;
-    Part lastAddedPart;
+    private int id;
+    private Part lastAddedPart;
 
     public Pc(int id) {
         this.id = id;

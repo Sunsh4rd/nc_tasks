@@ -22,29 +22,20 @@ public class SetOperations {
 
     public static HashSet<Integer> union(HashSet<Integer> s1, HashSet<Integer>s2) {
 
-        HashSet<Integer> union = new HashSet<Integer>();
-        for (Integer e: s1) {
-            if (s2.contains(e)) {
-                union.add(e);
-            }
-        }
+        HashSet<Integer> union = new HashSet<>(s1);
+        union.retainAll(s2);
         return union;
     }
 
     public static HashSet<Integer> except(HashSet<Integer> s1, HashSet<Integer>s2) {
 
-        HashSet<Integer> except = new HashSet<Integer>();
-        for (Integer e: s1) {
-            if (!s2.contains(e)) {
-                except.add(e);
-            }
-        }
-
-        for (Integer e: s2) {
-            if (!s1.contains(e)) {
-                except.add(e);
-            }
-        }
+        HashSet<Integer> except = new HashSet<>();
+        HashSet<Integer> copyOfFirstSet = new HashSet<>(s1);
+        HashSet<Integer> copyOfSecondSet = new HashSet<>(s2);
+        copyOfFirstSet.removeAll(s2);
+        copyOfSecondSet.removeAll(s1);
+        except.addAll(copyOfFirstSet);
+        except.addAll(copyOfSecondSet);
         return except;
     }
 }
