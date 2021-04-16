@@ -1,11 +1,7 @@
 package com.company;
 
-import UI.MenuElement;
-import UI.UserInterface;
-import UsersMap.User;
-import UsersMap.UserRegistry;
-
-import java.util.Map;
+import usersmap.User;
+import usersmap.UserRegistry;
 
 public class Main {
 

@@ -1,4 +1,5 @@
-package UsersMap;
+package usersmap;
+
 
 public class User {
 
