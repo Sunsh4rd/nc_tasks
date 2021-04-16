@@ -5,5 +5,13 @@ import java.util.TreeMap;
 
 public class UserRegistry {
 
-    public static final Map<String, Integer> registry = new TreeMap<>();
+    private static Map<String, Integer> registry = new TreeMap<>();
+
+    public static void putUserInRegistry(String data, int year) {
+        registry.put(data, year);
+    }
+
+    public static Map<String, Integer> getRegistry() {
+        return registry;
+    }
 }

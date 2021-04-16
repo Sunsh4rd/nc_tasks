@@ -23,16 +23,16 @@ public class Main {
         User user2 = new User("Alfred", "Boo", "No", 2003);
         User user3 = new User("Ming", "Che", "Parent", 2000);
 
-        UserRegistry.registry.put(user1.getFirsName()
+        UserRegistry.putUserInRegistry(user1.getFirsName()
                                 + user1.getSecondName()
                                 + user1.getPatronymic(), user1.getBirthYear());
-        UserRegistry.registry.put(user2.getFirsName()
+        UserRegistry.putUserInRegistry(user2.getFirsName()
                                 + user2.getSecondName()
                                 + user2.getPatronymic(), user2.getBirthYear());
-        UserRegistry.registry.put(user3.getFirsName()
+        UserRegistry.putUserInRegistry(user3.getFirsName()
                                 + user3.getSecondName()
                                 + user3.getPatronymic(), user3.getBirthYear());
 
-        System.out.println(UserRegistry.registry);
+        System.out.println(UserRegistry.getRegistry());
     }
 }
