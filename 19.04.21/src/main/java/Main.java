@@ -23,8 +23,8 @@ public class Main {
         car2.setWheels(Arrays.asList(1,1,1,1));
         car2.setBody("1ask2r");
         System.out.println(objectMapper.writeValueAsString(car2));
-        //{"engine":"Powerful engine","wheels":[1,1,1,1],"body":"2a1pij","trunk":false}
-        //{"engine":"Weak engine","wheels":[1,1,1,1],"body":"1ask2r","trunk":true}
+        //{"engine":"Powerful engine","body":"2a1pij","wheels":[1,1,1,1],"trunk":false}
+        //{"engine":"Weak engine","body":"1ask2r","wheels":[1,1,1,1],"trunk":true}
     }
 
     private static void serialization() throws IOException {
