@@ -1,5 +1,8 @@
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.util.List;
 
+@JsonPropertyOrder(value = {"engine", "body", "wheels", "trunk"})
 public class Car {
 
     private String engine;
