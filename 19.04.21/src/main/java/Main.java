@@ -37,5 +37,7 @@ public class Main {
         try(OutputStream outputStream = new FileOutputStream("test.json")) {
             objectMapper.writeValue(outputStream, student);
         }
+
+        //idea git
     }
 }
