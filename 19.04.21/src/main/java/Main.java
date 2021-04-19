@@ -18,12 +18,13 @@ public class Main {
         car1.setWheels(Arrays.asList(1,1,1,1));
         car1.setBody("2a1pij");
         System.out.println(objectMapper.writeValueAsString(car1));
-        //{"engine":"Powerful engine","wheels":[1,1,1,1],"body":"2a1pij","trunk":false}
         Car car2 = new Car();
         car2.setEngine("Weak engine");
         car2.setWheels(Arrays.asList(1,1,1,1));
         car2.setBody("1ask2r");
         System.out.println(objectMapper.writeValueAsString(car2));
+        //{"engine":"Powerful engine","wheels":[1,1,1,1],"body":"2a1pij","trunk":false}
+        //{"engine":"Weak engine","wheels":[1,1,1,1],"body":"1ask2r","trunk":true}
     }
 
     private static void serialization() throws IOException {
