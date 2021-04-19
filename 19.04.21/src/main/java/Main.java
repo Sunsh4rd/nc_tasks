@@ -38,6 +38,6 @@ public class Main {
             objectMapper.writeValue(outputStream, student);
         }
 
-        //idea git
+        //idea git2
     }
 }
