@@ -8,4 +8,6 @@
         <constructor-arg value="Ivan"/>
         <property name="secondName" value="Petrov"></property>
     </bean>
+
+    <bean class="main.RandomGenerator" id="generator" init-method="setRandomValue"/>
 </beans>
