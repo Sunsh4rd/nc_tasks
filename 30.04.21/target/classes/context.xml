@@ -6,8 +6,8 @@
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
     <bean class="main.Person" id="person" init-method="initMethod">
         <constructor-arg value="Ivan"/>
-        <property name="secondName" value="Petrov"></property>
+        <property name="secondName" value="Petrov"/>
     </bean>
 
-    <bean class="main.RandomGenerator" id="generator" init-method="setRandomValue"/>
+    <bean class="main.RandomGenerator" id="generator" init-method="setRandomValue" scope="prototype"/>
 </beans>
