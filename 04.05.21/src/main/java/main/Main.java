@@ -11,6 +11,8 @@ public class Main {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfig.class);
         Test test = applicationContext.getBean(Test.class);
         System.out.println(test);
+        Dog dog = applicationContext.getBean(Dog.class);
+        System.out.println(dog);
     }
 }
 
@@ -20,6 +22,16 @@ class JavaConfig {
     @Bean
     public Test test() {
       return new Test(100, "Testname");
+    }
+
+    @Bean
+    public Dog dog() {
+        return new Dog("Druzhok");
+    }
+
+    @Bean
+    public Owner owner() {
+        return new Owner("Owner");
     }
 }
 
