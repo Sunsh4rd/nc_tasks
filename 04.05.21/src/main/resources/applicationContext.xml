@@ -6,4 +6,12 @@
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:annotation-config/>
+
+    <bean class="main.Owner" id="owner">
+        <property name="name" value="Owner"/>
+    </bean>
+
+    <bean class="main.Dog" id="dog">
+        <constructor-arg value="Druzhok"></constructor-arg>
+    </bean>
 </beans>
