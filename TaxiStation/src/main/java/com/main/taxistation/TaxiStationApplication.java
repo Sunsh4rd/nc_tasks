@@ -6,10 +6,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
-public class TaxistationApplication {
+public class TaxiStationApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TaxistationApplication.class, args);
-
+        SpringApplication.run(TaxiStationApplication.class, args);
     }
+
+
 }

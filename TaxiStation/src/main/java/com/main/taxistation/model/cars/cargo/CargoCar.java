@@ -1,14 +1,12 @@
 package com.main.taxistation.model.cars.cargo;
 
-import com.main.taxistation.model.cars.Car;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CargoCar implements Car {
+public class CargoCar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
