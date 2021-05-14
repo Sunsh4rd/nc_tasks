@@ -1,0 +1,3 @@
+spring\mvc\root\entity\Name.class
+spring\mvc\root\storage\EntityStorage.class
+spring\mvc\root\service\NameService.class
